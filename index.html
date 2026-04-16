@@ -511,6 +511,195 @@
     color: var(--muted);
   }
 
+
+  /* EXPERIENCE */
+  .exp-timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 40px 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .exp-item:not(:last-child) .exp-connector::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: var(--rule);
+  }
+
+  .exp-left {
+    padding: 2rem 1.5rem 2rem 0;
+    text-align: right;
+    border-right: none;
+  }
+
+  .exp-company {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-location {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .exp-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.2rem;
+    position: relative;
+  }
+
+  .exp-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    outline: 1px solid var(--accent);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .exp-connector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: var(--rule);
+  }
+
+  .exp-right {
+    padding: 2rem 0 2rem 1.5rem;
+  }
+
+  .exp-role {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+
+  .exp-points {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .exp-points li {
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.75rem;
+  }
+
+  /* EDU & CERTS */
+  .edu-cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .block-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    padding: 1.75rem;
+  }
+
+  .edu-degree {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .edu-school {
+    font-size: 0.88rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .cert-item {
+    background: var(--card);
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .cert-issuer {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-left { text-align: left; padding: 1.5rem 0 0; border-right: none; }
+    .exp-connector { display: none; }
+    .exp-right { padding: 0.5rem 0 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem; }
+    .edu-cert-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -522,6 +711,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -683,6 +873,89 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-in">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-company">New Soft Solution Pvt. Ltd.</div>
+        <div class="exp-location">Solapur, Maharashtra</div>
+        <div class="exp-period">Ongoing</div>
+      </div>
+      <div class="exp-connector"><div class="exp-dot"></div></div>
+      <div class="exp-right">
+        <div class="exp-role">Full Stack Developer Intern</div>
+        <ul class="exp-points">
+          <li>Building responsive web applications using HTML5, CSS3, JavaScript, and jQuery.</li>
+          <li>Developing dynamic backend functionalities with PHP and integrating REST APIs.</li>
+          <li>Using Bootstrap to create mobile-friendly, professional UI layouts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-company">CoreXTech IT Services Pvt. Ltd.</div>
+        <div class="exp-location">Pune, Maharashtra</div>
+        <div class="exp-period">Recent</div>
+      </div>
+      <div class="exp-connector"><div class="exp-dot"></div></div>
+      <div class="exp-right">
+        <div class="exp-role">Cloud Engineering Intern</div>
+        <ul class="exp-points">
+          <li>Collaborating with cloud engineering team to deploy, monitor, and optimize cloud-based infrastructure.</li>
+          <li>Gaining hands-on experience with security best practices and container management.</li>
+          <li>Contributing to automation, documentation, and scalable architecture solutions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-company">Mass Technology</div>
+        <div class="exp-location">Pune, Maharashtra</div>
+        <div class="exp-period">May 2024 · 4 Months</div>
+      </div>
+      <div class="exp-connector"><div class="exp-dot"></div></div>
+      <div class="exp-right">
+        <div class="exp-role">Cloud Developer Intern</div>
+        <ul class="exp-points">
+          <li>Developed cloud-based applications using Java and AWS services.</li>
+          <li>Deployed and managed applications on AWS — S3, Lambda, and compute services.</li>
+          <li>Implemented scalable solutions for cloud storage, computation, and data processing.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EDUCATION & CERTS -->
+  <div class="edu-cert-grid" style="margin-top:3rem;">
+    <div class="edu-block">
+      <div class="block-label">Education</div>
+      <div class="edu-card">
+        <div class="edu-degree">B.Tech Electronics</div>
+        <div class="edu-school">Walchand Institute of Technology</div>
+        <div class="edu-meta">2020 – 2024 &nbsp;·&nbsp; CGPA: 9.0 &nbsp;·&nbsp; Honours in IoT</div>
+      </div>
+    </div>
+    <div class="cert-block">
+      <div class="block-label">Certifications</div>
+      <div class="cert-list">
+        <div class="cert-item"><span class="cert-issuer">AWS Skill Builder</span> Cloud Practitioner Essentials, Billing & Cost Management</div>
+        <div class="cert-item"><span class="cert-issuer">Infosys Springboard</span> C Programming, Introduction to Unix</div>
+        <div class="cert-item"><span class="cert-issuer">APTTECH</span> Data Structure & OOPS</div>
+      </div>
+    </div>
   </div>
 </section>
 
